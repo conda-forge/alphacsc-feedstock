@@ -11,7 +11,7 @@ source:
    - patches/001-remove_sporco_files_from_package.patch
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
