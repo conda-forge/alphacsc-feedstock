@@ -1,4 +1,4 @@
-{% set version = "0.3" %}
+{% set version = "0.4.0" %}
 
 package:
   name: alphacsc
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://github.com/alphacsc/alphacsc/archive/{{ version }}.tar.gz
-  sha256: 008acfcd39e8f9b926a22535015ae09a4e6e85986d496d4b279178b396a1dda2
+  sha256: 16634ea14e1d1cce169f6ec33b2d305b1272c44f678641d5687883e33468afe9
   patches:
-   - patches/001-remove_sporco_files_from_package.patch
+    - patches/001-remove_sporco_files_from_package.patch
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -49,7 +49,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Convolution dictionary learning for time-series.'
+  summary: Convolution dictionary learning for time-series.
   description: |
     This is a library to perform shift-invariant sparse
     dictionary learning, also known as convolutional
