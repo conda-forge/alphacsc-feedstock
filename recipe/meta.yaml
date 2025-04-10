@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/alphacsc/alphacsc/archive/{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/m/mne/mne-{{ version }}.tar.gz
   sha256: f1f04bfa1b71e2c054bc16a1b3c807bbde0b704c6bc33ddb5f499fbf66b18866
 
 build:
