@@ -30,7 +30,6 @@ requirements:
     - python
     - mne-base
     - numba
-    - {{ pin_compatible('numpy') }}
     - scipy
     - joblib
     - matplotlib-base
