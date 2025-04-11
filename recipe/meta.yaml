@@ -1,17 +1,15 @@
-{% set version = "0.3" %}
+{% set version = "0.4.1" %}
 
 package:
   name: alphacsc
   version: {{ version }}
 
 source:
-  url: https://github.com/alphacsc/alphacsc/archive/{{ version }}.tar.gz
-  sha256: 008acfcd39e8f9b926a22535015ae09a4e6e85986d496d4b279178b396a1dda2
-  patches:
-   - patches/001-remove_sporco_files_from_package.patch
+  url: https://pypi.org/packages/source/a/alphacsc/alphacsc-{{ version }}.tar.gz
+  sha256: f1f04bfa1b71e2c054bc16a1b3c807bbde0b704c6bc33ddb5f499fbf66b18866
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -21,16 +19,17 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
+    - setuptools
     - numpy
     - cython
   run:
     - python
     - mne-base
     - numba
-    - {{ pin_compatible('numpy') }}
     - scipy
     - joblib
     - matplotlib-base
@@ -40,6 +39,7 @@ test:
   imports:
     - alphacsc
   requires:
+    - python
     - pip
   commands:
     - pip check
@@ -61,3 +61,4 @@ about:
 extra:
   recipe-maintainers:
     - tommoral
+    - larsoner
